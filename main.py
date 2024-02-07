@@ -129,7 +129,7 @@ labels = [
 box_annotator = sv.BoxAnnotator()
 frame = box_annotator.annotate(scene=image, detections=detections, labels=labels)
 
-%matplotlib inline
+# %matplotlib inline
 sv.show_frame_in_notebook(image, (16, 16))
 
 
@@ -226,10 +226,10 @@ class Detr(pl.LightningModule):
     def val_dataloader(self):
         return VAL_DATALOADER
 
-%cd {HOME}
+# %cd {HOME}
 
-%load_ext tensorboard
-%tensorboard --logdir lightning_logs/
+# %load_ext tensorboard
+# %tensorboard --logdir lightning_logs/
 
 
 model = Detr(lr=1e-4, lr_backbone=1e-5, weight_decay=1e-4)
@@ -239,7 +239,7 @@ outputs = model(pixel_values=batch['pixel_values'], pixel_mask=batch['pixel_mask
 
 from pytorch_lightning import Trainer
 
-%cd {HOME}
+# %cd {HOME}
 
 # settings
 MAX_EPOCHS = 10
@@ -281,7 +281,7 @@ labels = [f"{id2label[class_id]}" for _, _, class_id, _ in detections]
 frame = box_annotator.annotate(scene=image.copy(), detections=detections, labels=labels)
 
 print('ground truth')
-%matplotlib inline
+# %matplotlib inline
 sv.show_frame_in_notebook(frame, (16, 16))
 
 # inference
@@ -305,7 +305,7 @@ labels = [f"{id2label[class_id]} {confidence:.2f}" for _, confidence, class_id, 
 frame = box_annotator.annotate(scene=image.copy(), detections=detections, labels=labels)
 
 print('detections')
-%matplotlib inline
+# %matplotlib inline
 sv.show_frame_in_notebook(frame, (16, 16))
 
 def convert_to_xywh(boxes):
