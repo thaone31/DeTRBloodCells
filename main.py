@@ -242,7 +242,7 @@ from pytorch_lightning import Trainer
 # %cd {HOME}
 
 # settings
-MAX_EPOCHS = 10
+MAX_EPOCHS = 100
 
 # pytorch_lightning < 2.0.0
 # trainer = Trainer(gpus=1, max_epochs=MAX_EPOCHS, gradient_clip_val=0.1, accumulate_grad_batches=8, log_every_n_steps=5)
