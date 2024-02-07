@@ -37,8 +37,6 @@ from getpass import getpass
 
 ROBOFLOW_API_KEY = getpass('Enter ROBOFLOW_API_KEY secret value: ')
 
-!mkdir {HOME}/datasets
-%cd {HOME}/datasets
 
 from roboflow import Roboflow
 rf = Roboflow(api_key=ROBOFLOW_API_KEY)
